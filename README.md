@@ -12,7 +12,7 @@ Project description.
 ## 📄 Compiled PDF
 [View compiled PDF](https://clarkmiyamoto.github.io/<PROJECT_NAME>/main.pdf)
 ```
-4. Add, commit, and push.
+4. Add, commit, and push...
 
 
 

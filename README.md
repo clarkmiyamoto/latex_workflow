@@ -13,6 +13,7 @@ Project description.
 [View compiled PDF](https://clarkmiyamoto.github.io/<PROJECT_NAME>/main.pdf)
 ```
 So for example, the example PDF in this repo is uploaded to https://clarkmiyamoto.github.io/latex_workflow/main.pdf.
+
 4. Finally! Add, commit, and push.
 
 

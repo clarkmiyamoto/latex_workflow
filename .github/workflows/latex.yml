@@ -15,3 +15,14 @@ jobs:
         with:
           name: PDF
           path: main.pdf
+
+    deploy:
+      needs: build
+      runs-on: ubuntu-latest
+      environment:
+        name: github-pages
+
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deploy
+          uses: actions/deploy-pages@v4

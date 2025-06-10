@@ -13,8 +13,10 @@ git push origin master
 rm -rf latex_workflow
 ```
 
-2. Place `.tex` (and related files) in the `tex/` folder.
-3. Update entire `README.md` to
+2. On the correspond GitHub repo, go to `Settings` -> `Pages`. Change `Source` to `GitHub Actions`.
+
+3. Place `.tex` (and related files) in the `tex/` folder.
+4. Update entire `README.md` to
 ```
 # <PROJECT_NAME>
 Project description.
@@ -24,7 +26,7 @@ Project description.
 ```
 So for example, the example PDF in this repo is uploaded to https://clarkmiyamoto.github.io/latex_workflow/main.pdf.
 
-4. Finally! Add, commit, and push.
+5. Finally! Add, commit, and push.
 
 # Assumptions
 - Main tex file is `tex/main.tex`.

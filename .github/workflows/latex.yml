@@ -1,0 +1,41 @@
+name: Compile and Deploy LaTeX PDF
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up TeX Live
+        uses: teatimeguest/setup-texlive-action@v2
+        with:
+          packages: >-
+            latexmk
+            xetex
+            biblatex
+            biber
+
+      - name: Compile LaTeX and clean
+        run: |
+          cd tex
+          latexmk -pdf -interaction=nonstopmode -file-line-error main.tex
+          mv main.pdf ../
+          latexmk -c
+
+      - name: Deploy PDF to GitHub Pages branch
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages || git checkout --orphan gh-pages
+          git checkout gh-pages
+          mv main.pdf ./main.pdf
+          git add main.pdf
+          git commit -m "Update compiled PDF"
+          git push origin gh-pages --force
+
